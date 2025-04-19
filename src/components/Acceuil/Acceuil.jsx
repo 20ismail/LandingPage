@@ -2,6 +2,7 @@ import Navbar from "./NavBar";
 import Footer from "./Footer";
 import Features from "./Features"; // Import du composant Features
 import Hero from './Hero'
+import Whats from './WhatsAppButton';
 import ProductHighlight from './ProductHighlight'
 const Layout = ({ children }) => {
   return (
@@ -13,7 +14,7 @@ const Layout = ({ children }) => {
         <Hero />
       </div> */}
       <ProductHighlight />
-
+      <Whats />
       {/* Contenu de la page */}
       <div className="min-h-screen p-5">
         {children}

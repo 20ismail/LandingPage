@@ -11,7 +11,7 @@ import Login from "./components/dashboard/pages/Login";
 import Messages from "./components/dashboard/pages/Messages"; // Importez la page Messages
 import PrivateRoute from "./components/dashboard/components/PrivateRoute";
 import { ToastContainer } from "react-toastify";
-
+import Coach  from './components/Acceuil/Coach'
 
 // Shop (public site)
 import Home from "./components/shop/pages/Home";
@@ -55,7 +55,7 @@ function App() {
      
       <Route path="/profile" element={<Profile />} />
      
-
+      <Route path="/Coach" element={<Coach />} />
         {/* ✅ Shop public */}
         {/* <Route path="/shop" element={<Home />} /> */}
         <Route path="/shop/product/:id" element={<ProductDetails />} />
