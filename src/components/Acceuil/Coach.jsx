@@ -47,7 +47,7 @@ const CoachLandingPage = () => {
     form.append("message", formData.message);
   
     try {
-      await fetch("https://script.google.com/macros/s/AKfycbwRTVIN8-khQETNNXebLXk-RJwp3Jln8SOcufmNfVX5JDqi0Px0SrQWPgsofDSVQV2h/exec", {
+      await fetch("https://script.google.com/macros/s/AKfycbxMFwCLPtnUDNXmbOdTH0JtqK1scpVZldKlH_4_i4lkXPpttZZpkMg9XA-ADt4bR9gk/exec", {
         method: "POST",
         body: form,
         mode: "no-cors", // important pour contourner CORS
