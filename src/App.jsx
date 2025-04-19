@@ -50,12 +50,12 @@ function App() {
         <Route path="/shop/Contact" element={<Layout><Contacter /></Layout>} />
         <Route path="/login" element= {<Layout><Login /></Layout>}/>
         <Route path="/SignUp" element= {<Layout><SignUp /></Layout>}/>
-        <Route path="/" element= {<LayoutAcceuil><Home /></LayoutAcceuil>}/>
+        <Route path="/" element={<Coach />}/>
       {/*  */}
      
       <Route path="/profile" element={<Profile />} />
      
-      <Route path="/Coach" element={<Coach />} />
+      <Route path="/Coach"  />
         {/* ✅ Shop public */}
         {/* <Route path="/shop" element={<Home />} /> */}
         <Route path="/shop/product/:id" element={<ProductDetails />} />

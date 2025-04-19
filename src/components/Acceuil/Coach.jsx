@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes, FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaWhatsapp } from 'react-icons/fa';
-
+import Img1 from "../../assets/coach/WhatsApp Image 2025-04-19 à 14.45.48_71e1a274.jpg";
+import Img2 from "../../assets/coach/WhatsApp Image 2025-04-19 à 14.45.48_9a561d5f.jpg";
 const CoachLandingPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -9,7 +10,6 @@ const CoachLandingPage = () => {
     phone: '',
     message: ''
   });
-
   // Données pour les sections
   const services = [
     { icon: '🚀', title: 'التطوير المهني', description: 'برامج متخصصة لتعزيز مسارك الوظيفي وتطوير المهارات القيادية' },
@@ -37,12 +37,29 @@ const CoachLandingPage = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('تم إرسال الرسالة بنجاح! سيتواصل معك المدرب العربي قريباً.');
-    setFormData({ name: '', email: '', phone: '', message: '' });
+  
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbwFjBxawUyS2LQVshoryKNE9ubV-ItgWH3sbf3cEahSsYxW6ZAUAbTwptlVbF4e-V80/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+  
+      const result = await response.json();
+      console.log("✅ Envoi réussi :", result);
+    } catch (error) {
+      console.error("❌ Erreur lors de l'envoi :", error);
+    }
   };
+  
+
 
   return (
     <div className="app" dir="rtl">
@@ -930,7 +947,7 @@ const CoachLandingPage = () => {
               </div>
             </div>
             <div className="hero-image">
-              <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="المدرب العربي" />
+              <img src={Img1} alt="المدرب العربي" />
             </div>
           </div>
         </section>
@@ -955,7 +972,7 @@ const CoachLandingPage = () => {
         <section id="about" className="section">
           <div className="container about-container">
             <div className="about-image">
-              <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="المدرب العربي" />
+              <img src={Img2} alt="المدرب العربي" />
             </div>
             <div className="about-text">
               <h2 className="section-title">من أنا</h2>
@@ -1001,7 +1018,7 @@ const CoachLandingPage = () => {
           </div>
         </section>
 
-        {/* Contact */}
+               {/* Contact */}
         <section id="contact" className="section">
           <div className="container">
             <h2 className="section-title">تواصل معي</h2>
@@ -1047,6 +1064,7 @@ const CoachLandingPage = () => {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="أخبرني أكثر عن احتياجاتك وكيف يمكنني مساعدتك"
+                  required
                 ></textarea>
               </div>
               <button type="submit" className="submit-button">إرسال الرسالة</button>
