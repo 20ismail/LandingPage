@@ -40,20 +40,21 @@ const CoachLandingPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
   
-    try {
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbwFjBxawUyS2LQVshoryKNE9ubV-ItgWH3sbf3cEahSsYxW6ZAUAbTwptlVbF4e-V80/exec",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+    const form = new FormData();
+    form.append("name", formData.name);
+    form.append("email", formData.email);
+    form.append("phone", formData.phone);
+    form.append("message", formData.message);
   
-      const result = await response.json();
-      console.log("✅ Envoi réussi :", result);
+    try {
+      await fetch("https://script.google.com/macros/s/AKfycbwRTVIN8-khQETNNXebLXk-RJwp3Jln8SOcufmNfVX5JDqi0Px0SrQWPgsofDSVQV2h/exec", {
+        method: "POST",
+        body: form,
+        mode: "no-cors", // important pour contourner CORS
+      });
+  
+      console.log("✅ Envoi réussi (no-cors, pas de réponse lisible)");
+      // Tu peux afficher une alerte ou vider le formulaire ici
     } catch (error) {
       console.error("❌ Erreur lors de l'envoi :", error);
     }
