@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes, FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaWhatsapp } from 'react-icons/fa';
-import Img1 from "../../assets/coach/WhatsApp Image 2025-04-19 à 14.45.48_71e1a274.jpg";
-import Img2 from "../../assets/coach/WhatsApp Image 2025-04-19 à 14.45.48_9a561d5f.jpg";
+import Img1 from "../../../public/WhatsApp Image 2025-04-19 à 14.45.48_71e1a274.jpg";
+import Img2 from "../../../public/WhatsApp Image 2025-04-19 à 14.45.48_9a561d5f.jpg";
 const CoachLandingPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
