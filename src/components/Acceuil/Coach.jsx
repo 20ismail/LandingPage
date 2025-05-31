@@ -925,10 +925,9 @@ const CoachLandingPage = () => {
       `}</style>
 
       {/* WhatsApp Button */}
-      <a href="https://wa.me/212612345678" className="whatsapp-button" target="_blank" rel="noopener noreferrer">
-        <FaWhatsapp />
-      </a>
-
+     <a href="https://wa.me/212603010300" className="whatsapp-button" target="_blank" rel="noopener noreferrer">
+      <FaWhatsapp />
+    </a>
       {/* Header */}
       <header id="header">
         <nav className="container">
