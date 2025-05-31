@@ -7,6 +7,7 @@ import Coach  from './components/Acceuil/Coach'
 
 function App() {
   return (
+    
     <Router basename="/LandingPage">
       <>
         <ToastContainer position="top-right" autoClose={3000} />
