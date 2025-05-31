@@ -22,13 +22,13 @@ const CoachLandingPage = () => {
       text: "ساعدني المدرب العربي على تغيير حياتي بالكامل. أشعر الآن بالثقة والقدرة على تحقيق أحلامي.",
       name: "محمد أحمد",
       role: "رجل أعمال",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+      image: "https://cdn-icons-png.flaticon.com/512/180/180658.png"
     },
     {
       text: "الجلسات مع المدرب العربي كانت نقطة التحول في مسيرتي المهنية. أنصح الجميع بالاستفادة من خبراته.",
       name: "سارة خالد",
       role: "مديرة تنفيذية",
-      image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+      image: "https://i.pinimg.com/736x/2f/6f/99/2f6f9945a0a6a56c655a5c1fa256f655.jpg"
     }
   ];
 
@@ -951,7 +951,7 @@ const CoachLandingPage = () => {
         <section className="hero">
           <div className="container hero-container">
             <div className="hero-text">
-              <h1>اكتشف قوة شخصيتك مع المدرب العربي</h1>
+              <h1> اكتشف قوة شخصيتك مع المدرب العربي البوهلالي< /h1>
               <p>برامج تدريبية واستشارات فردية مصممة خصيصاً لمساعدتك على تحقيق أقصى إمكاناتك في الحياة والعمل</p>
               <div style={{ display: 'flex', gap: '20px' }}>
                 <a href="#contact" className="cta-button">احجز جلسة الآن</a>
