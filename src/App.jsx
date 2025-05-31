@@ -1,33 +1,21 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-// Admin dashboard
-
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import Coach  from './components/Acceuil/Coach'
-
-// Shop (public site)
-
-
-
-// Ajoutez cette route à votre configuration
-
 
 function App() {
   return (
-    <Router>
-
-<>
-      <ToastContainer position="top-right" autoClose={3000} />
-      {/* Autres composants */}
-    </>
-      
-      <Routes>
-      
-        <Route path="/" element={<Coach />}/>
-      {/*  */}
-     
-      
-      </Routes>
+    <Router basename="/LandingPage">
+      <>
+        <ToastContainer position="top-right" autoClose={3000} />
+        
+        <Routes>
+          <Route path="/" element={<Coach />} />
+          {/* Ajoute d'autres routes ici si besoin */}
+        </Routes>
+      </>
     </Router>
   );
 }

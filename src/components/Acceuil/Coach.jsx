@@ -37,29 +37,41 @@ const CoachLandingPage = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-  
-    const form = new FormData();
-    form.append("name", formData.name);
-    form.append("email", formData.email);
-    form.append("phone", formData.phone);
-    form.append("message", formData.message);
-  
-    try {
-      await fetch("https://script.google.com/macros/s/AKfycbxMFwCLPtnUDNXmbOdTH0JtqK1scpVZldKlH_4_i4lkXPpttZZpkMg9XA-ADt4bR9gk/exec", {
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const form = new FormData();
+  form.append("name", formData.name);
+  form.append("email", formData.email);
+  form.append("phone", formData.phone);
+  form.append("message", formData.message);
+
+  try {
+    await fetch(
+      "https://script.google.com/macros/s/AKfycbyarxqfpPgZ_EkMdiMlWS_rU72QChnY14rhQpPT6_fqCUN5OIQgAp8zjUuPaYz6UVDm/exec",
+      {
         method: "POST",
         body: form,
-        mode: "no-cors", // important pour contourner CORS
-      });
-  
-      console.log("✅ Envoi réussi (no-cors, pas de réponse lisible)");
-      // Tu peux afficher une alerte ou vider le formulaire ici
-    } catch (error) {
-      console.error("❌ Erreur lors de l'envoi :", error);
-    }
-  };
-  
+        mode: "no-cors", // requis pour Google Sheets
+      }
+    );
+
+    console.log("✅ Envoi réussi (no-cors, pas de réponse lisible)");
+    alert("✅ Votre message a été envoyé avec succès !");
+    
+    // Réinitialiser les champs du formulaire
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: ""
+    });
+  } catch (error) {
+    console.error("❌ Erreur lors de l'envoi :", error);
+    alert("❌ Une erreur est survenue. Veuillez réessayer.");
+  }
+};
+
 
 
   return (
@@ -1024,7 +1036,7 @@ const CoachLandingPage = () => {
         <section id="contact" className="section">
           <div className="container">
             <h2 className="section-title">تواصل معي</h2>
-            <form onSubmit={handleSubmit} className="contact-form">
+            <form  onSubmit={handleSubmit} className="contact-form">
               <div className="form-group">
                 <label htmlFor="name">الاسم الكامل</label>
                 <input 
